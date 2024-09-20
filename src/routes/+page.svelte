@@ -40,8 +40,8 @@
 		<h1 class="h1">Tarkov Experience Visualisation</h1>
 		<p>Your current Experience:</p>
 		<div>
-			<input class="input " type="number" title="Your current Experience" bind:value={experience} min="0"
-						 max="{maximumExperience}" on:input={()=>{updateLevel()}} />
+			<input bind:value={experience} class="input " max="{maximumExperience}" min="0" on:input={()=>{updateLevel()}}
+						 title="Your current Experience" type="number" />
 		</div>
 		<div class="grid items-center grid-cols-2">
 			<div class="text-right pr-10"><h1>Level {level}</h1></div>
