@@ -19,6 +19,7 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
+      - run: npx playwright install
       - run: npm run test
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
