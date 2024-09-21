@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm build
-      - run: npm test
+      - run: npm run build
+      - run: npm run test
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
         id: compress
