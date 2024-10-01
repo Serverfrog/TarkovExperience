@@ -4,8 +4,10 @@
 name: Tarkov-Experience
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+      - 'releases/**'
 
 jobs:
   build:
@@ -15,8 +17,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm build
-      - run: npm test
+      - run: npm install
+      - run: npm run build
+      - run: npx playwright install
+      - run: npm run test
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
         id: compress
